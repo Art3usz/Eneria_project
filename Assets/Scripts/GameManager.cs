@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent (typeof (DontDestroy))]
 public class GameManager : MonoBehaviour {
 
     private static GameManager _instance;
@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void Awake () {
-        _instance = this;
+        if (_instance == null)
+            _instance = this;
+        else if (_instance != this)
+            Destroy (gameObject);
     }
 }
