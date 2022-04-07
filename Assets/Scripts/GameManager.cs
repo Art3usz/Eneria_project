@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 [RequireComponent (typeof (DontDestroy))]
 public class GameManager : MonoBehaviour {
 
@@ -22,5 +24,6 @@ public class GameManager : MonoBehaviour {
             _instance = this;
         else if (_instance != this)
             Destroy (gameObject);
+        LoadScene.loadNewScene(1);
     }
 }
