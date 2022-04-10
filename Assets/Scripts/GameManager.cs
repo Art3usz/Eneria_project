@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     private static GameManager _instance;
+    
     public static GameManager instance {
         get {
             if (_instance == null) {
@@ -24,6 +25,6 @@ public class GameManager : MonoBehaviour {
             _instance = this;
         else if (_instance != this)
             Destroy (gameObject);
-        LoadScene.loadNewScene(1);
+        SceneManagment.loadNewScene(1);
     }
 }
